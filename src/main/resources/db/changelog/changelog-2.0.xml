@@ -1,0 +1,24 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="elizaveta" id="2">
+        <createTable tableName="un_groups">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" unique="true"/>
+            </column>
+            <column name="number" type= "VARCHAR (100)">
+                <constraints nullable="false" />
+            </column>
+            <column name="quantity" type="bigint">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createIndex tableName="un_groups" indexName="groups_number_id">
+            <column name="number"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

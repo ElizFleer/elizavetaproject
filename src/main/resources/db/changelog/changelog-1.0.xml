@@ -1,0 +1,27 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="elizaveta" id="1">
+        <createTable tableName="students">
+        <column name="id" type="bigint" autoIncrement="true">
+            <constraints nullable="false" primaryKey="true" unique="true"/>
+    </column>
+        <column name="full_name" type= "VARCHAR (100)">
+            <constraints nullable="false" />
+        </column>
+        <column name="entrance_date" type="date">
+            <constraints nullable="false" />
+    </column>
+    <column name="group_id" type="bigint">
+        <constraints nullable="false"/>
+    </column>
+</createTable>
+<createIndex tableName="students" indexName="students_group_id">
+<column name="group_id"/>
+</createIndex>
+    </changeSet>
+    </databaseChangeLog>
