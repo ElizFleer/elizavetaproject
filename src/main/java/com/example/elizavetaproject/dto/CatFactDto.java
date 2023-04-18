@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddGroupRequestDto {
-private String number;
+public class CatFactDto {
+    private String fact;
 
-    private Integer quantity;
+    private Integer length;
 }

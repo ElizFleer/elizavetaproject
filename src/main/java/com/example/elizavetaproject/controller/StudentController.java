@@ -1,11 +1,13 @@
 package com.example.elizavetaproject.controller;
 
+import com.example.elizavetaproject.dto.AllGroupResponseDto;
+import com.example.elizavetaproject.dto.AllStudentResponseDto;
+import com.example.elizavetaproject.dto.StudentDto;
 import com.example.elizavetaproject.entity.Student;
 import com.example.elizavetaproject.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RequestMapping(path="/students")
@@ -13,17 +15,17 @@ import java.util.List;
 @RestController
 public class StudentController {
 
+
     private final StudentService studentService;
 
     @PostMapping
-    public void addStudent(@Valid @RequestBody Student student){
-        studentService.addStudent(student);
+    public void addStudent(@RequestBody StudentDto studentDto){
+        studentService.addStudent(studentDto);
     }
 
     @GetMapping("/students")
     public List<Student> getAllStudents(){
-        List<Student> allStudents = studentService.getAllStudents();
-        return allStudents;
+        return studentService.getAllStudents();
     }
 
     @GetMapping("/students/{id}")

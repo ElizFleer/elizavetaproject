@@ -11,4 +11,5 @@ public class WrongDataException extends RuntimeException {
 
  public WrongDataException(){
  }
+
 }
